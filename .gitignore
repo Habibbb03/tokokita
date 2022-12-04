@@ -16,6 +16,3 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
-/app/Models/!user.php
-/app/Http/Controllers/!Controller.php
-/database/migrations/!2022_11_21_012349_create_items_table.php

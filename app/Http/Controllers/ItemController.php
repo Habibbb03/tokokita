@@ -15,11 +15,18 @@ class ItemController extends Controller
     public function index()
     {
         $data = Item::all();
+        //$data = false;
+        if ($data) {
+            return response()->json([
+                "message" => "Load data success",
+                "data" => $data
+            ], 200);
+        }
 
         return response()->json([
-            "message" => "Load data success",
-            "data" => $data
-        ], 200);
+            "message" => "Load data failed",
+            "data" => null
+        ], 400);
     }
 
     /**

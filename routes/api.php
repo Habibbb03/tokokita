@@ -22,7 +22,8 @@ use App\Http\Controllers\ItemController;
 
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
+Route::get('/item', [ItemController::class, 'index']);
 Route::middleware('auth:sanctum')->group(function(){
     Route::post('/logout', [AuthController::class, 'logout']);
-    Route::resource('/item', ItemController::class);
+    Route::resource('/item', ItemController::class)->except('index');
 });
