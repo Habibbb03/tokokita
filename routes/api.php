@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,4 +29,5 @@ Route::middleware('auth:sanctum')->group(function(){
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::resource('/item', ItemController::class)->except('index');
     Route::resource('/order', OrderController::class);
+    Route::resource('/cart', CartController::class);
 });
